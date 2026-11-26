@@ -3,7 +3,7 @@
 Situs company profile [arasinusa.co.id](https://arasinusa.co.id): jig & fixture,
 machining, fabrikasi, integrasi otomasi, dan general supply industri di Cikarang.
 
-HTML statis (Tailwind lewat CDN), di-hosting di Hostinger (cPanel Hosting Bisnis).
+HTML statis (Tailwind lewat CDN), di-hosting di Niagahoster (cPanel, server srv178).
 
 ## Struktur
 
@@ -48,12 +48,12 @@ Secrets yang dibutuhkan (Settings > Secrets and variables > Actions):
 
 | Secret | Isi |
 | --- | --- |
-| `SSH_HOST` | IP server dari hPanel > Akses SSH |
-| `SSH_PORT` | Port SSH Hostinger (biasanya `65002`) |
-| `SSH_USERNAME` | Username SSH (`u123456789`) |
-| `SSH_PRIVATE_KEY` | Private key; public key-nya didaftarkan di hPanel > Akses SSH |
+| `SSH_HOST` | `109.106.252.156` (IP server) |
+| `SSH_PORT` | `65002` |
+| `SSH_USERNAME` | Username cPanel |
+| `SSH_PRIVATE_KEY` | Private key; public key-nya di-import dan di-Authorize di cPanel > SSH Access > Manage SSH Keys |
 | `SSH_PASSPHRASE` | Kosongkan kalau key tanpa passphrase |
-| `DEPLOY_PATH` | Opsional. Default `domains/arasinusa.co.id/public_html` |
+| `DEPLOY_PATH` | Opsional. Default `public_html` (atau `domains/arasinusa.co.id/public_html` kalau ada) |
 | `OPS_ALERT_WEBHOOK_URL` | Webhook grup Telegram, sama dengan repo client lain |
 
 ### Manual (File Manager hPanel)

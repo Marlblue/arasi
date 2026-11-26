@@ -1,4 +1,4 @@
-name: Deploy ke Hostinger
+name: Deploy ke Niagahoster
 
 on:
   push:
@@ -75,8 +75,17 @@ jobs:
           envs: DEPLOY_PATH
           script: |
             set -e
-            TARGET="$HOME/${DEPLOY_PATH:-domains/arasinusa.co.id/public_html}"
+            # Hostinger menaruh tiap domain di domains/<domain>/public_html, cPanel biasa
+            # (Niagahoster, tempat situs ini) di public_html. DEPLOY_PATH menang kalau diisi.
+            if [ -n "$DEPLOY_PATH" ]; then
+              TARGET="$HOME/$DEPLOY_PATH"
+            elif [ -d "$HOME/domains/arasinusa.co.id/public_html" ]; then
+              TARGET="$HOME/domains/arasinusa.co.id/public_html"
+            else
+              TARGET="$HOME/public_html"
+            fi
             test -d "$TARGET"
+            echo "Deploy ke $TARGET"
 
             # Dibongkar ke direktori sementara dulu dan diperiksa isinya, supaya tar
             # yang rusak tidak meninggalkan public_html setengah terisi.
