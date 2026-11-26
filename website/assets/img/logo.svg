@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="PT Arasi Nusantara Perkasa">
+  <!-- Logo sementara: ganti file ini dengan logo resmi (nama file sama) -->
+  <rect x="0" y="8" width="48" height="48" rx="6" fill="#001F4B"/>
+  <path d="M12 46 L24 18 L36 46 H30 L24 31 L18 46 Z" fill="#FFFFFF"/>
+  <rect x="19" y="38" width="10" height="4" fill="#CC0000"/>
+  <text x="60" y="36" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900" letter-spacing="3" fill="#001F4B">ARASI</text>
+  <text x="61" y="54" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing=".6" fill="#64748B">NUSANTARA PERKASA</text>
+</svg>

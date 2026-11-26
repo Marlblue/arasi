@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio Proyek | PT Arasi Nusantara Perkasa</title>
+  <meta name="description" content="Proyek jig &amp; fixture, fabrikasi, otomasi, dan modifikasi fasilitas yang dikerjakan PT Arasi Nusantara Perkasa untuk pabrik klien.">
+  <meta name="theme-color" content="#001F4B">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="min-h-screen flex flex-col">
+<a href="#konten" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow">Langsung ke konten</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="site-logo" href="index.html" aria-label="PT Arasi Nusantara Perkasa, ke beranda"><img alt="PT Arasi Nusantara Perkasa" src="assets/img/logo.png" width="900" height="187"></a>
+    <nav class="nav-desktop" aria-label="Navigasi utama">
+      <a class="nav-link" href="index.html">Beranda</a><div class="dropdown"><a class="nav-link" href="solusi-industri.html">Solusi Industri<span class="material-symbols-outlined" aria-hidden="true">expand_more</span></a><div class="dropdown-menu"><a href="solusi-industri.html#jig-fixture">Jig &amp; Fixture Custom</a><a href="solusi-industri.html#otomasi-robotik">Otomasi &amp; Integrasi Robotik</a><a href="solusi-industri.html#machining-fabrikasi">Machining &amp; Fabrikasi Custom</a><a href="solusi-industri.html#conveyor-modifikasi">Conveyor &amp; Modifikasi Fasilitas</a></div></div><a class="nav-link" href="portofolio.html" aria-current="page">Portofolio Proyek</a><a class="nav-link" href="produk.html">Produk Industri</a><a class="nav-link" href="artikel.html">Artikel</a><a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a class="btn btn-primary btn-sm header-cta" href="#kontak">Diskusikan Proyek</a>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-label="Buka menu" aria-expanded="false" aria-controls="menu-mobile"><span class="material-symbols-outlined" aria-hidden="true">menu</span></button>
+    </div>
+  </div>
+  <nav id="menu-mobile" class="nav-mobile hidden" data-menu aria-label="Navigasi utama (mobile)">
+    <div class="wrap">
+      <a class="m-link" href="index.html">Beranda</a><div class="m-row"><a class="m-link" href="solusi-industri.html">Solusi Industri</a><button type="button" class="m-expand" aria-expanded="false" aria-controls="m-sub-solusi" aria-label="Tampilkan sub-menu Solusi Industri"><span class="material-symbols-outlined" aria-hidden="true">expand_more</span></button></div><div id="m-sub-solusi" class="m-sub-list" hidden><a class="m-link m-sub" href="solusi-industri.html#jig-fixture">Jig &amp; Fixture Custom</a><a class="m-link m-sub" href="solusi-industri.html#otomasi-robotik">Otomasi &amp; Integrasi Robotik</a><a class="m-link m-sub" href="solusi-industri.html#machining-fabrikasi">Machining &amp; Fabrikasi Custom</a><a class="m-link m-sub" href="solusi-industri.html#conveyor-modifikasi">Conveyor &amp; Modifikasi Fasilitas</a></div><a class="m-link" href="portofolio.html" aria-current="page">Portofolio Proyek</a><a class="m-link" href="produk.html">Produk Industri</a><a class="m-link" href="artikel.html">Artikel</a><a class="m-link" href="tentang-kami.html">Tentang Kami</a>
+      <a class="btn btn-primary btn-block mt-5" href="#kontak">Diskusikan Proyek</a>
+    </div>
+  </nav>
+</header>
+<main id="konten" class="flex-grow">
+<style>
+  .rows { border-top: 2px solid #001F4B; }
+  .row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) 260px; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid #D5DCE5; align-items: start; }
+  .route { list-style: none; margin: 0; padding: 0; position: relative; font-size: .9375rem; color: #3F4654; counter-reset: step; }
+  .route::before { content: ""; position: absolute; left: 5px; top: 12px; bottom: 12px; width: 2px; background: #D5DCE5; }
+  .route li { position: relative; padding: 4px 0 4px 26px; }
+  .route li::before { content: ""; position: absolute; left: 0; top: 10px; width: 12px; height: 12px; border-radius: 999px; background: #001F4B; box-shadow: 0 0 0 3px #fff; }
+  .route li:last-child::before { background: #CC0000; }
+  @media (max-width: 1023px) { .row { grid-template-columns: minmax(0, 1fr) 220px; } .route { grid-column: 1; } .row .media { grid-column: 2; grid-row: 1 / span 2; } }
+  @media (max-width: 639px) { .row { grid-template-columns: 1fr; gap: 1.25rem; } .row .media { grid-column: 1; grid-row: 1; } }
+</style>
+<section class="page-hero">
+  <div class="wrap">
+    <h1 class="h-display">Portofolio proyek</h1>
+    <p class="lede">Jig dan fixture, fabrikasi peralatan, integrasi otomasi, serta modifikasi fasilitas yang sudah kami kerjakan untuk pabrik klien.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="daftar-judul">
+  <div class="wrap">
+    <h2 id="daftar-judul" class="sr-only">Daftar proyek</h2>
+    <div class="catalog-chips mb-4" data-filter-group="daftar-proyek" role="group" aria-label="Saring proyek"><button type="button" class="chip" data-filter="all" aria-pressed="true">Semua <span class="chip-n">18</span></button><button type="button" class="chip" data-filter="jig" aria-pressed="false">Jig &amp; Fixture <span class="chip-n">2</span></button><button type="button" class="chip" data-filter="fabrikasi" aria-pressed="false">Fabrikasi <span class="chip-n">8</span></button><button type="button" class="chip" data-filter="otomasi" aria-pressed="false">Otomasi <span class="chip-n">5</span></button><button type="button" class="chip" data-filter="modifikasi" aria-pressed="false">Modifikasi Fasilitas <span class="chip-n">3</span></button></div>
+    <p class="body-sm mb-6" aria-live="polite"><span data-filter-count="daftar-proyek">18</span> proyek ditampilkan</p>
+    <div id="daftar-proyek" class="rows">
+<article id="jig-punch-press" class="row" data-cat="jig">
+  <div class="row-text">
+    <p class="meta">Jig &amp; Fixture · Otomotif · stamping</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Jig part ke mesin punch press</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Base plate jig dengan fixture connector, insert bushing berflens, dan handle angkat untuk memosisikan part secara konsisten saat proses punching.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Gambar &amp; sampel part</li><li>Desain 3D</li><li>Machining</li><li>Inspeksi dimensi</li><li>Trial di mesin</li></ol>
+  <div class="media ratio-4-3 rounded-lg contain border border-[#E6EAF0]"><img src="assets/img/projects/jig-punch-press.jpg" alt="Jig part ke mesin punch press" loading="lazy"></div>
+</article>
+<article id="jig-cover-drl" class="row" data-cat="jig">
+  <div class="row-text">
+    <p class="meta">Jig &amp; Fixture · Otomotif · perakitan lampu</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Jig Assy Cover DRL</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Tiga varian dudukan perakitan cover DRL, dirancang agar permukaan part tidak tergores dan posisinya konsisten di setiap siklus.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Gambar &amp; sampel</li><li>Desain 3D</li><li>Machining</li><li>Inspeksi dimensi</li><li>Trial di lini</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/jig-drl-1-mfg.jpg" alt="Jig Assy Cover DRL" loading="lazy"></div>
+</article>
+<article id="base-robot-fanuc" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Otomotif · stasiun robot</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Base &amp; jig robot Fanuc</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Meja dudukan robot Fanuc dan meja controller berangka baja, dengan roda dan leveling foot agar stasiun robot mudah dipindah dan diposisikan ulang.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Data robot &amp; area</li><li>Desain 3D rangka</li><li>Fabrikasi las</li><li>Finishing</li><li>Instalasi</li></ol>
+  <div class="media ratio-4-3 rounded-lg contain border border-[#E6EAF0]"><img src="assets/img/projects/base-robot-fanuc.jpg" alt="Base &amp; jig robot Fanuc" loading="lazy"></div>
+</article>
+<article id="cover-grille-bumper" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Otomotif · custom part</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Cover grille bumper Fortuner</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Komponen cover grille bumper untuk lini Toyota Fortuner, dibuat mengikuti gambar kerja dan dimensi part dari customer.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Gambar kerja</li><li>Desain 3D</li><li>Fabrikasi</li><li>Inspeksi dimensi</li><li>Serah terima</li></ol>
+  <div class="media ratio-4-3 rounded-lg contain border border-[#E6EAF0]"><img src="assets/img/projects/cover-grille-bumper.jpg" alt="Cover grille bumper Fortuner" loading="lazy"></div>
+</article>
+<article id="folding-pallet" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Logistik · material handling</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Folding pallet</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Palet baja lipat untuk penumpukan komponen dan penghematan ruang saat kosong, dengan engsel yang dirancang untuk pemakaian berulang.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Kebutuhan beban</li><li>Desain struktur</li><li>Fabrikasi las</li><li>Finishing</li><li>Serah terima</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/folding-pallet.jpg" alt="Folding pallet" loading="lazy"></div>
+</article>
+<article id="trolley-door-plate" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Material handling</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Trolley door plate</h3>
+    <p class="client mt-1">PT Shin Heung Indonesia</p>
+    <p class="body mt-3">Troli pemindah pelat pintu antarstasiun, dengan rangka dan dudukan yang menjaga permukaan benda kerja tetap aman.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Survei part</li><li>Desain 3D</li><li>Fabrikasi</li><li>Finishing</li><li>Serah terima</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/trolley-door-plate.jpg" alt="Trolley door plate" loading="lazy"></div>
+</article>
+<article id="trolley-pipe-ac" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Material handling</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Trolley pipe AC</h3>
+    <p class="client mt-1">LG Electronics Indonesia</p>
+    <p class="body mt-3">Troli stainless untuk penyimpanan dan pemindahan pipa AC di area produksi.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Survei part</li><li>Desain</li><li>Fabrikasi stainless</li><li>Finishing</li><li>Serah terima</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/trolley-pipe-ac.jpg" alt="Trolley pipe AC" loading="lazy"></div>
+</article>
+<article id="tools-cabinet" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Shop floor</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Tools cabinet</h3>
+    <p class="client mt-1">PT KAO Indonesia</p>
+    <p class="body mt-3">Kabinet dan meja stainless untuk penyimpanan perkakas di area produksi.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Survei area</li><li>Desain</li><li>Fabrikasi stainless</li><li>Finishing</li><li>Instalasi</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/tools-cabinet.jpg" alt="Tools cabinet" loading="lazy"></div>
+</article>
+<article id="dryer-tools-cabinet" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Shop floor · higienis</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Dryer tools cabinet</h3>
+    <p class="client mt-1">PT KAO Indonesia</p>
+    <p class="body mt-3">Kabinet pengering perkakas berbahan stainless, dari desain rak bagian dalam sampai unit terpasang.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Kebutuhan proses</li><li>Desain 3D</li><li>Fabrikasi stainless</li><li>Finishing</li><li>Instalasi</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/dryer-cabinet.jpg" alt="Dryer tools cabinet" loading="lazy"></div>
+</article>
+<article id="halal-certify-tools" class="row" data-cat="fabrikasi">
+  <div class="row-text">
+    <p class="meta">Fabrikasi · Fasilitas produksi</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Halal certify tools</h3>
+    <p class="client mt-1">PT KAO Indonesia</p>
+    <p class="body mt-3">Pembuatan dan pemasangan perlengkapan stainless pendukung proses sertifikasi halal di area produksi.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Survei lapangan</li><li>Desain</li><li>Fabrikasi stainless</li><li>Instalasi</li><li>Serah terima</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/kao-halal-6.jpg" alt="Halal certify tools" loading="lazy"></div>
+</article>
+<article id="air-assist" class="row" data-cat="otomasi">
+  <div class="row-text">
+    <p class="meta">Otomasi · Special purpose machine</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Air assist injection machine</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Unit air assist untuk mesin injeksi, dirakit lengkap dengan regulator, tabung udara, dan panel kontrol.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Studi proses</li><li>Desain</li><li>Perakitan</li><li>Wiring</li><li>Commissioning</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/spm-air-assist.jpg" alt="Air assist injection machine" loading="lazy"></div>
+</article>
+<article id="temperature-control" class="row" data-cat="otomasi">
+  <div class="row-text">
+    <p class="meta">Otomasi · Special purpose machine</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Temperature control panel</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Panel kontrol temperatur untuk proses produksi, dari perakitan komponen sampai uji fungsi.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Studi proses</li><li>Desain panel</li><li>Perakitan</li><li>Wiring</li><li>Uji fungsi</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/spm-temp-control.jpg" alt="Temperature control panel" loading="lazy"></div>
+</article>
+<article id="pick-to-light" class="row" data-cat="otomasi">
+  <div class="row-text">
+    <p class="meta">Otomasi · Perakitan · poka-yoke</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Pick To Light System</h3>
+    <p class="client mt-1">PT Sugity Creatives</p>
+    <p class="body mt-3">Lampu indikator di setiap rak memandu operator mengambil komponen yang benar, terhubung ke panel HMI dan kontrol lini.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Audit rak</li><li>Desain modul</li><li>Wiring &amp; PLC</li><li>Uji urutan</li><li>Pelatihan operator</li></ol>
+  <div class="media ratio-4-3 rounded-lg slider" data-slider aria-roledescription="carousel"><div class="slides" tabindex="0"><div class="slide" role="group" aria-roledescription="slide" aria-label="1 dari 2"><img src="assets/img/real/ptl-before.jpg" alt="Rak sebelum pick to light: operator mencari part di banyak lokasi" loading="lazy" style="object-position:100% 75%"><span class="sl-tag">Before</span></div><div class="slide" role="group" aria-roledescription="slide" aria-label="2 dari 2"><img src="assets/img/real/ptl-after.jpg" alt="Rak pick to light: operator dipandu lampu langsung ke lokasi part" loading="lazy" style="object-position:82% 60%"><span class="sl-tag">After</span></div></div><button type="button" class="sl-btn sl-prev" data-sl-prev aria-label="Foto sebelumnya"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button><button type="button" class="sl-btn sl-next" data-sl-next aria-label="Foto berikutnya"><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button><div class="sl-dots"><button type="button" class="sl-dot" data-sl-go="0" aria-label="Slide 1" aria-current="true"></button><button type="button" class="sl-dot" data-sl-go="1" aria-label="Slide 2"></button></div></div>
+</article>
+<article id="agv" class="row" data-cat="otomasi">
+  <div class="row-text">
+    <p class="meta">Otomasi · Intralogistik</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">AGV System</h3>
+    
+    <p class="body mt-3">Kendaraan berpemandu otomatis yang menarik troli komponen antar-stasiun, mendukung keselamatan kerja dan kelancaran alur produksi.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Pemetaan rute</li><li>Desain troli</li><li>Instalasi</li><li>Integrasi stasiun</li><li>Uji jalan</li></ol>
+  <div class="media ratio-4-3 rounded-lg slider" data-slider aria-roledescription="carousel"><div class="slides" tabindex="0"><div class="slide" role="group" aria-roledescription="slide" aria-label="1 dari 3"><img src="assets/img/real/agv-unit.jpg" alt="Unit AGV dengan panel layar dan tombol kontrol" loading="lazy"></div><div class="slide" role="group" aria-roledescription="slide" aria-label="2 dari 3"><video src="assets/video/agv-run-2.mp4" poster="assets/img/real/agv-run-2.jpg" muted loop playsinline preload="none" disablepictureinpicture aria-label="Video AGV menarik troli bumper di jalur produksi"></video></div><div class="slide" role="group" aria-roledescription="slide" aria-label="3 dari 3"><video src="assets/video/agv-run-1.mp4" poster="assets/img/real/agv-run-1.jpg" muted loop playsinline preload="none" disablepictureinpicture aria-label="Video troli bumper yang ditarik AGV"></video></div></div><button type="button" class="sl-btn sl-prev" data-sl-prev aria-label="Foto sebelumnya"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button><button type="button" class="sl-btn sl-next" data-sl-next aria-label="Foto berikutnya"><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button><div class="sl-dots"><button type="button" class="sl-dot" data-sl-go="0" aria-label="Slide 1" aria-current="true"></button><button type="button" class="sl-dot" data-sl-go="1" aria-label="Slide 2"></button><button type="button" class="sl-dot" data-sl-go="2" aria-label="Slide 3"></button></div></div>
+</article>
+<article id="robot-painting" class="row" data-cat="otomasi">
+  <div class="row-text">
+    <p class="meta">Otomasi · Coating</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Robot Painting Integrated System</h3>
+    
+    <p class="body mt-3">Integrasi robot pengecatan di stasiun kerja untuk hasil lapisan yang konsisten, proses lebih efisien, dan produksi yang stabil.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Studi proses</li><li>Desain base &amp; layout</li><li>Integrasi robot &amp; PLC</li><li>Teaching</li><li>Commissioning</li></ol>
+  <div class="media ratio-4-3 rounded-lg slider" data-slider aria-roledescription="carousel"><div class="slides" tabindex="0"><div class="slide" role="group" aria-roledescription="slide" aria-label="1 dari 3"><img src="assets/img/real/robot-painting-2.jpg" alt="Robot painting kolaboratif di atas base stasiun kerja" loading="lazy"></div><div class="slide" role="group" aria-roledescription="slide" aria-label="2 dari 3"><img src="assets/img/real/robot-painting-3.jpg" alt="Robot painting terpasang di booth pengecatan" loading="lazy" style="object-position:78% 50%"></div><div class="slide contain" role="group" aria-roledescription="slide" aria-label="3 dari 3"><img src="assets/img/real/robot-painting-4.jpg" alt="Robot painting di atas base beroda sebelum instalasi" loading="lazy"></div></div><button type="button" class="sl-btn sl-prev" data-sl-prev aria-label="Foto sebelumnya"><span class="material-symbols-outlined" aria-hidden="true">chevron_left</span></button><button type="button" class="sl-btn sl-next" data-sl-next aria-label="Foto berikutnya"><span class="material-symbols-outlined" aria-hidden="true">chevron_right</span></button><div class="sl-dots"><button type="button" class="sl-dot" data-sl-go="0" aria-label="Slide 1" aria-current="true"></button><button type="button" class="sl-dot" data-sl-go="1" aria-label="Slide 2"></button><button type="button" class="sl-dot" data-sl-go="2" aria-label="Slide 3"></button></div></div>
+</article>
+<article id="bypass-conveyor" class="row" data-cat="modifikasi">
+  <div class="row-text">
+    <p class="meta">Modifikasi Fasilitas · Food processing</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Bypass conveyor</h3>
+    <p class="client mt-1">PT Nippon Indosari Corpindo (Sari Roti)</p>
+    <p class="body mt-3">Jalur conveyor bypass untuk lini roti lapis dan dorayaki, menghubungkan slicer ke mesin packing dengan belt food grade dan rangka stainless.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Survei layout</li><li>Desain jalur</li><li>Fabrikasi rangka</li><li>Instalasi &amp; motor</li><li>Uji aliran</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/projects/bypass-conveyor.jpg" alt="Bypass conveyor" loading="lazy"></div>
+</article>
+<article id="tangga-operator" class="row" data-cat="modifikasi">
+  <div class="row-text">
+    <p class="meta">Modifikasi Fasilitas · K3 · ergonomi</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Modifikasi tangga operator</h3>
+    <p class="client mt-1">PT KAO Indonesia</p>
+    <p class="body mt-3">Perpanjangan platform tangga operator lengkap dengan handrail dan pijakan anti-slip, disesuaikan dengan ketinggian area kerja yang baru.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Ukur area</li><li>Desain K3</li><li>Fabrikasi</li><li>Instalasi</li><li>Serah terima</li></ol>
+  <div class="media ratio-4-3 rounded-lg contain border border-[#E6EAF0]"><img src="assets/img/projects/tangga-operator-kao.jpg" alt="Modifikasi tangga operator" loading="lazy"></div>
+</article>
+<article id="asphalt-repair" class="row" data-cat="modifikasi">
+  <div class="row-text">
+    <p class="meta">Modifikasi Fasilitas · Fasilitas pabrik</p>
+    <h3 class="h-card !text-[1.375rem] mt-1">Perbaikan jalan aspal pabrik</h3>
+    <p class="client mt-1">TACI</p>
+    <p class="body mt-3">Perbaikan permukaan jalan aspal di area pabrik, dikerjakan bertahap dengan pengamanan area kerja.</p>
+  </div>
+  <ol class="route" aria-label="Tahapan pengerjaan"><li>Survei kerusakan</li><li>Rencana kerja</li><li>Pembongkaran</li><li>Pengaspalan</li><li>Serah terima</li></ol>
+  <div class="media ratio-4-3 rounded-lg"><img src="assets/img/real/taci-2.jpg" alt="Perbaikan jalan aspal pabrik" loading="lazy"></div>
+</article>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-paper-2" aria-labelledby="alur-judul">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="alur-judul" class="h-section">Alur pengerjaan</h2>
+      <p class="lede">Setiap proyek melewati empat tahap yang sama, dari kebutuhan di lini sampai alat berjalan di pabrik Anda.</p>
+    </div>
+    <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10"><li class="border-t-[3px] border-[#001F4B] pt-5"><span class="block text-sm font-bold text-[#CC0000]">Tahap 1</span><h3 class="h-card mt-1">Kebutuhan produksi</h3><p class="body-sm mt-2">Mempelajari kondisi lini, target cycle time, masalah defect, dan toleransi yang diminta.</p></li><li class="border-t-[3px] border-[#001F4B] pt-5"><span class="block text-sm font-bold text-[#CC0000]">Tahap 2</span><h3 class="h-card mt-1">Lingkup pekerjaan</h3><p class="body-sm mt-2">Konsep desain 3D, pemilihan material, dan estimasi waktu pengerjaan.</p></li><li class="border-t-[3px] border-[#001F4B] pt-5"><span class="block text-sm font-bold text-[#CC0000]">Tahap 3</span><h3 class="h-card mt-1">Dokumentasi</h3><p class="body-sm mt-2">Gambar kerja, laporan inspeksi dimensi, wiring diagram, dan panduan operasional.</p></li><li class="border-t-[3px] border-[#001F4B] pt-5"><span class="block text-sm font-bold text-[#CC0000]">Tahap 4</span><h3 class="h-card mt-1">Fungsi alat / sistem</h3><p class="body-sm mt-2">Uji fungsi di workshop, lalu instalasi dan trial di pabrik klien sampai berjalan stabil.</p></li></ol>
+    <a class="btn btn-primary mt-12" href="#kontak">Diskusikan proyek serupa</a>
+  </div>
+</section>
+
+</main>
+<section id="kontak" class="section bg-navy on-navy" aria-labelledby="kontak-judul">
+  <div class="wrap grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+    <div class="lg:col-span-5">
+      <h2 id="kontak-judul" class="h-section">Diskusikan kebutuhan lini produksi Anda</h2>
+      <p class="lede">Kirim gambar teknik, sampel, atau ringkasan masalah di lini. Tim engineering kami meninjau, lalu menjadwalkan survei ke pabrik bila diperlukan.</p>
+      <dl class="mt-8 grid gap-5 text-[15px]">
+        <div class="flex gap-3"><span class="material-symbols-outlined text-white/80 mt-0.5" aria-hidden="true">mail</span><div><dt class="sr-only">Email</dt><dd><a class="font-semibold text-white underline-offset-4 hover:underline" href="mailto:admin@arasinusa.co.id">admin@arasinusa.co.id</a></dd></div></div>
+        <div class="flex gap-3"><span class="material-symbols-outlined text-white/80 mt-0.5" aria-hidden="true">call</span><div><dt class="sr-only">Telepon</dt><dd><a class="font-semibold text-white underline-offset-4 hover:underline" href="tel:+622189774919">(021) 897 74919</a></dd></div></div>
+        <div class="flex gap-3"><span class="material-symbols-outlined text-white/80 mt-0.5" aria-hidden="true">location_on</span><div><dt class="sr-only">Kantor</dt><dd class="text-[#C9D3E3] leading-relaxed">Ruko Lafenza Villa Mutiara Cikarang 1 Blok R4 No. 36, Cikarang Selatan, Kab. Bekasi</dd></div></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-7">
+      <form class="surface bg-white text-[#0F172A] rounded-lg p-6 md:p-8 grid gap-5" data-contact-form>
+        <div>
+          <h3 class="h-card">Form konsultasi proyek</h3>
+          <p class="body-sm mt-1">Kolom bertanda <span class="text-[#CC0000] font-semibold">*</span> wajib diisi.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="field"><label for="nama-portofolio">Nama lengkap <span class="req">*</span></label><input id="nama-portofolio" name="nama" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="perusahaan-portofolio">Perusahaan <span class="req">*</span></label><input id="perusahaan-portofolio" name="perusahaan" type="text" autocomplete="organization" required></div>
+          <div class="field"><label for="email-portofolio">Email kantor <span class="req">*</span></label><input id="email-portofolio" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="telepon-portofolio">Telepon / WhatsApp <span class="req">*</span></label><input id="telepon-portofolio" name="telepon" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+()\-\s]{8,20}" placeholder="08xx xxxx xxxx" required></div>
+        </div>
+        <div class="field"><label for="kategori-portofolio">Jenis kebutuhan</label><select id="kategori-portofolio" name="kategori"><option>Jig &amp; Fixture Custom</option><option>Otomasi &amp; Integrasi Robotik</option><option>Machining &amp; Fabrikasi Custom</option><option>Conveyor &amp; Modifikasi Fasilitas</option><option>Pengadaan Produk / Suku Cadang</option><option>Lainnya</option></select></div>
+        <div class="field"><label for="pesan-portofolio">Ringkasan kebutuhan <span class="req">*</span></label><textarea id="pesan-portofolio" name="pesan" rows="4" required placeholder="Proses, part, material, jumlah, atau masalah yang ingin diselesaikan."></textarea></div>
+        <div class="form-status ok" data-form-status role="status" tabindex="-1" hidden></div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <button class="btn btn-primary" type="submit"><span class="material-symbols-outlined" aria-hidden="true">send</span>Kirim permintaan</button>
+          <p class="body-sm">Tombol ini membuka aplikasi email Anda dengan pesan yang sudah terisi.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <img src="assets/img/logo-white.png" alt="PT Arasi Nusantara Perkasa" class="h-10 w-auto" width="900" height="187" loading="lazy">
+      <p class="mt-5 text-[15px] leading-relaxed max-w-xs">Engineering, machining, precision tools, fabrication, dan general supply untuk industri manufaktur.</p>
+    </div>
+    <div class="lg:col-span-2">
+      <h3>Navigasi</h3>
+      <ul class="grid gap-2.5 text-[15px]"><li><a href="index.html">Beranda</a></li><li><a href="solusi-industri.html">Solusi Industri</a></li><li><a href="portofolio.html">Portofolio Proyek</a></li><li><a href="produk.html">Produk Industri</a></li><li><a href="artikel.html">Artikel</a></li><li><a href="tentang-kami.html">Tentang Kami</a></li></ul>
+    </div>
+    <div class="lg:col-span-3">
+      <h3>Solusi</h3>
+      <ul class="grid gap-2.5 text-[15px]"><li><a href="solusi-industri.html#jig-fixture">Jig &amp; Fixture Custom</a></li><li><a href="solusi-industri.html#otomasi-robotik">Otomasi &amp; Integrasi Robotik</a></li><li><a href="solusi-industri.html#machining-fabrikasi">Machining &amp; Fabrikasi Custom</a></li><li><a href="solusi-industri.html#conveyor-modifikasi">Conveyor &amp; Modifikasi Fasilitas</a></li></ul>
+    </div>
+    <div class="lg:col-span-3">
+      <h3>Kontak</h3>
+      <ul class="grid gap-2.5 text-[15px] leading-relaxed">
+        <li><a href="mailto:admin@arasinusa.co.id">admin@arasinusa.co.id</a></li>
+        <li><a href="tel:+622189774919">(021) 897 74919</a></li>
+        <li><a href="https://www.arasinusa.co.id" target="_blank" rel="noopener noreferrer">www.arasinusa.co.id</a></li>
+        <li class="pt-2"><span class="text-white font-semibold">Kantor</span><br>Ruko Lafenza Villa Mutiara Cikarang 1 Blok R4 No. 36, Cikarang Selatan, Kab. Bekasi</li>
+        <li><span class="text-white font-semibold">Workshop</span><br>Kp. Nambo RT 011/RW 008, Sukasejati, Cikarang Selatan, Kab. Bekasi</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="wrap py-6 text-sm">© <span data-year>2026</span> PT Arasi Nusantara Perkasa. Seluruh hak dilindungi.</div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

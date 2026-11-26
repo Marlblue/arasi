@@ -1,0 +1,30 @@
+# Cek berkala bahwa situsnya hidup dan masih situs ini, bukan halaman parkir domain atau
+# halaman suspend hosting. Kalau gagal, grup Telegram dikabari. Logikanya ada di
+# Marlblue/website-ops/actions/cek-situs.
+name: Cek situs hidup
+
+on:
+  # Tiap 30 menit: repo privat memakan kuota menit Actions, dan tiap 5 menit jauh
+  # melewati jatah gratis 2.000 menit sebulan. Jadwal GitHub juga sering molor saat
+  # antrean ramai, jadi ini batas atas deteksi, bukan janji.
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  # cek-situs membaca hasil run sebelumnya sebelum mengabari situs tak terjangkau.
+  actions: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: Marlblue/website-ops/actions/cek-situs@8f016c53f902557e42072b93b2a7dfe99fcc4703 # main
+        with:
+          # Secret HEALTHCHECK_URL opsional, untuk mengarahkan pemeriksaan ke alamat lain.
+          url: ${{ secrets.HEALTHCHECK_URL || 'https://arasinusa.co.id/' }}
+          penanda: Arasi Nusantara Perkasa
+          label: arasinusa.co.id
+          webhook: ${{ secrets.OPS_ALERT_WEBHOOK_URL }}

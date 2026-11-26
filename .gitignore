@@ -1,0 +1,22 @@
+# Bahan mentah dari client (foto barang & proyek, PDF company profile, logo asli).
+# Ukurannya puluhan MB dan yang dipakai situs sudah disalin ke website/assets/,
+# jadi tidak ikut ke repo. Simpan cadangannya di Drive.
+/bahan/
+
+# Zip hasil kemas untuk upload manual lewat File Manager hPanel.
+/deploy/
+
+# python
+__pycache__/
+*.pyc
+
+# misc
+.DS_Store
+.env*
+!.env.example
+
+# vercel (situs sudah pindah ke Hostinger)
+.vercel
+
+# Sisa Next.js/Vercel lama, menunggu dihapus.
+/_arsip-vercel-nextjs/

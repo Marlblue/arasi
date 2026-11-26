@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AGV untuk aliran material antar-stasiun | PT Arasi Nusantara Perkasa</title>
+  <meta name="description" content="Kapan AGV layak dipakai, apa yang perlu disiapkan di lantai produksi, dan bagaimana troli serta titik docking dirancang.">
+  <meta name="theme-color" content="#001F4B">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="min-h-screen flex flex-col">
+<a href="#konten" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-white focus:px-4 focus:py-2 focus:rounded-md focus:shadow">Langsung ke konten</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="site-logo" href="index.html" aria-label="PT Arasi Nusantara Perkasa, ke beranda"><img alt="PT Arasi Nusantara Perkasa" src="assets/img/logo.png" width="900" height="187"></a>
+    <nav class="nav-desktop" aria-label="Navigasi utama">
+      <a class="nav-link" href="index.html">Beranda</a><div class="dropdown"><a class="nav-link" href="solusi-industri.html">Solusi Industri<span class="material-symbols-outlined" aria-hidden="true">expand_more</span></a><div class="dropdown-menu"><a href="solusi-industri.html#jig-fixture">Jig &amp; Fixture Custom</a><a href="solusi-industri.html#otomasi-robotik">Otomasi &amp; Integrasi Robotik</a><a href="solusi-industri.html#machining-fabrikasi">Machining &amp; Fabrikasi Custom</a><a href="solusi-industri.html#conveyor-modifikasi">Conveyor &amp; Modifikasi Fasilitas</a></div></div><a class="nav-link" href="portofolio.html">Portofolio Proyek</a><a class="nav-link" href="produk.html">Produk Industri</a><a class="nav-link" href="artikel.html" aria-current="page">Artikel</a><a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a class="btn btn-primary btn-sm header-cta" href="#kontak">Diskusikan Proyek</a>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-label="Buka menu" aria-expanded="false" aria-controls="menu-mobile"><span class="material-symbols-outlined" aria-hidden="true">menu</span></button>
+    </div>
+  </div>
+  <nav id="menu-mobile" class="nav-mobile hidden" data-menu aria-label="Navigasi utama (mobile)">
+    <div class="wrap">
+      <a class="m-link" href="index.html">Beranda</a><div class="m-row"><a class="m-link" href="solusi-industri.html">Solusi Industri</a><button type="button" class="m-expand" aria-expanded="false" aria-controls="m-sub-solusi" aria-label="Tampilkan sub-menu Solusi Industri"><span class="material-symbols-outlined" aria-hidden="true">expand_more</span></button></div><div id="m-sub-solusi" class="m-sub-list" hidden><a class="m-link m-sub" href="solusi-industri.html#jig-fixture">Jig &amp; Fixture Custom</a><a class="m-link m-sub" href="solusi-industri.html#otomasi-robotik">Otomasi &amp; Integrasi Robotik</a><a class="m-link m-sub" href="solusi-industri.html#machining-fabrikasi">Machining &amp; Fabrikasi Custom</a><a class="m-link m-sub" href="solusi-industri.html#conveyor-modifikasi">Conveyor &amp; Modifikasi Fasilitas</a></div><a class="m-link" href="portofolio.html">Portofolio Proyek</a><a class="m-link" href="produk.html">Produk Industri</a><a class="m-link" href="artikel.html" aria-current="page">Artikel</a><a class="m-link" href="tentang-kami.html">Tentang Kami</a>
+      <a class="btn btn-primary btn-block mt-5" href="#kontak">Diskusikan Proyek</a>
+    </div>
+  </nav>
+</header>
+<main id="konten" class="flex-grow">
+<article>
+  <header class="page-hero !pb-10">
+    <div class="wrap max-w-[56rem]">
+      <nav aria-label="Breadcrumb" class="body-sm"><a class="font-semibold text-[#001F4B] hover:underline underline-offset-4" href="artikel.html">Artikel</a><span aria-hidden="true" class="mx-2">/</span><span>Otomasi</span></nav>
+      <h1 class="h-display !text-[clamp(2rem,4vw,2.875rem)] mt-4">AGV untuk aliran material antar-stasiun</h1>
+      <p class="lede">Kapan AGV layak dipakai, apa yang perlu disiapkan di lantai produksi, dan bagaimana troli serta titik docking dirancang.</p>
+      <p class="body-sm mt-6">Tim Engineering PT Arasi Nusantara Perkasa · 2 menit baca</p>
+    </div>
+  </header>
+  <div class="wrap max-w-[56rem] pt-10">
+    <figure class="media ratio-16-10 rounded-lg"><img src="assets/img/real/agv.jpg" alt="AGV untuk aliran material antar-stasiun"></figure>
+    <div class="prose-arasi mt-10">
+<p>Mendorong troli komponen dari gudang ke lini terlihat sepele, tetapi jika dilakukan puluhan kali per shift, waktunya terasa. Operator meninggalkan stasiunnya, jadwal pasokan tidak konsisten, dan lorong menjadi padat. Automated guided vehicle (AGV) mengambil alih pekerjaan berulang ini.</p>
+
+<h2>Kapan AGV masuk akal</h2>
+<ul>
+  <li>Rutenya tetap dan berulang, misalnya dari supermarket part ke beberapa stasiun perakitan.</li>
+  <li>Beban dan bentuk troli bisa diseragamkan.</li>
+  <li>Lantai cukup rata, dan lorongnya bisa dipisahkan dari jalur forklift.</li>
+</ul>
+<p>Jika rutenya sering berubah atau barangnya sangat beragam, sistem lain mungkin lebih cocok. Pemetaan rute di awal membantu menjawab pertanyaan ini sebelum investasi.</p>
+
+<h2>Jalur dan navigasi</h2>
+<p>AGV paling sederhana mengikuti pita magnetik di lantai, dengan penanda tambahan untuk berhenti, belok, atau mengubah kecepatan. Sistem ini mudah dipasang dan diubah. Untuk area yang lebih dinamis, navigasi berbasis QR code atau laser bisa dipakai. Yang penting, persimpangan dan titik berhenti dirancang agar AGV tidak saling menunggu.</p>
+
+<h2>Troli dan docking</h2>
+<p>Bagian yang sering dilupakan adalah troli itu sendiri. Troli harus punya titik kait yang seragam, roda yang cocok dengan beban, dan rangka yang menahan part tanpa bergeser saat AGV berbelok. Di setiap stasiun, titik docking memastikan troli berhenti di posisi yang sama, sehingga operator selalu mengambil part dari sisi yang benar.</p>
+
+<h2>Keselamatan di lantai produksi</h2>
+<ul>
+  <li>Sensor anti-tabrak di depan AGV yang memperlambat lalu menghentikan unit saat ada halangan.</li>
+  <li>Tombol berhenti darurat di kedua sisi.</li>
+  <li>Lampu dan suara peringatan saat bergerak dan berbelok.</li>
+  <li>Marka lantai yang jelas memisahkan jalur AGV dari jalur pejalan kaki.</li>
+</ul>
+
+<h2>Integrasi dengan stasiun</h2>
+<p>AGV bisa dipanggil dengan tombol di stasiun atau dijadwalkan oleh sistem. Sinyal sederhana dari PLC stasiun, misalnya troli kosong sudah siap diambil, sudah cukup untuk membuat alur pasokan berjalan sendiri tanpa operator perlu menelepon gudang.</p>
+    </div>
+    <aside class="mt-14 rounded-lg bg-[#F5F7FA] border border-[#E6EAF0] p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 justify-between">
+      <div>
+        <h2 class="h-card">Punya kasus serupa di lini Anda?</h2>
+        <p class="body-sm mt-1">Kirim gambar atau ceritakan masalahnya. Tim kami bantu cari solusinya.</p>
+      </div>
+      <a class="btn btn-primary shrink-0" href="#kontak" data-quote="AGV untuk aliran material antar-stasiun" data-kategori="Lainnya">Diskusikan dengan tim</a>
+    </aside>
+  </div>
+</article>
+
+<section class="section" aria-labelledby="lain-judul">
+  <div class="wrap">
+    <div class="section-head-row">
+      <h2 id="lain-judul" class="h-section">Artikel lainnya</h2>
+      <a class="link-arrow" href="artikel.html">Semua artikel<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a class="card card-hover flex flex-col" href="artikel-poka-yoke-stamping.html">
+        <div class="media contain ratio-16-10"><img src="assets/img/projects/jig-punch-press.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col border-t border-[#E6EAF0]"><p class="meta">Jig &amp; fixture</p><h3 class="h-card mt-1 flex-1">Menekan defect stamping dengan desain nested poka-yoke dan clamping pneumatik</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+      <a class="card card-hover flex flex-col" href="artikel-interlock-robot.html">
+        <div class="media ratio-16-10"><img src="assets/img/real/robot-painting-cad.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col"><p class="meta">Otomasi</p><h3 class="h-card mt-1 flex-1">PLC dan safety interlock pada stasiun kerja robot Fanuc</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+      <a class="card card-hover flex flex-col" href="artikel-perawatan-pneumatik.html">
+        <div class="media contain ratio-16-10"><img src="assets/img/barang/smc.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col border-t border-[#E6EAF0]"><p class="meta">Perawatan</p><h3 class="h-card mt-1 flex-1">Perawatan silinder pneumatik dan solenoid valve di area berdebu logam</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+<section id="kontak" class="section bg-navy on-navy" aria-labelledby="kontak-judul">
+  <div class="wrap grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+    <div class="lg:col-span-5">
+      <h2 id="kontak-judul" class="h-section">Diskusikan kebutuhan lini produksi Anda</h2>
+      <p class="lede">Kirim gambar teknik, sampel, atau ringkasan masalah di lini. Tim engineering kami meninjau, lalu menjadwalkan survei ke pabrik bila diperlukan.</p>
+      <dl class="mt-8 grid gap-5 text-[15px]">
+        <div class="flex gap-3"><span class="material-symbols-outlined text-white/80 mt-0.5" aria-hidden="true">mail</span><div><dt class="sr-only">Email</dt><dd><a class="font-semibold text-white underline-offset-4 hover:underline" href="mailto:admin@arasinusa.co.id">admin@arasinusa.co.id</a></dd></div></div>
+        <div class="flex gap-3"><span class="material-symbols-outlined text-white/80 mt-0.5" aria-hidden="true">call</span><div><dt class="sr-only">Telepon</dt><dd><a class="font-semibold text-white underline-offset-4 hover:underline" href="tel:+622189774919">(021) 897 74919</a></dd></div></div>
+        <div class="flex gap-3"><span class="material-symbols-outlined text-white/80 mt-0.5" aria-hidden="true">location_on</span><div><dt class="sr-only">Kantor</dt><dd class="text-[#C9D3E3] leading-relaxed">Ruko Lafenza Villa Mutiara Cikarang 1 Blok R4 No. 36, Cikarang Selatan, Kab. Bekasi</dd></div></div>
+      </dl>
+    </div>
+    <div class="lg:col-span-7">
+      <form class="surface bg-white text-[#0F172A] rounded-lg p-6 md:p-8 grid gap-5" data-contact-form>
+        <div>
+          <h3 class="h-card">Form konsultasi proyek</h3>
+          <p class="body-sm mt-1">Kolom bertanda <span class="text-[#CC0000] font-semibold">*</span> wajib diisi.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="field"><label for="nama-artikel-agv-aliran-material">Nama lengkap <span class="req">*</span></label><input id="nama-artikel-agv-aliran-material" name="nama" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="perusahaan-artikel-agv-aliran-material">Perusahaan <span class="req">*</span></label><input id="perusahaan-artikel-agv-aliran-material" name="perusahaan" type="text" autocomplete="organization" required></div>
+          <div class="field"><label for="email-artikel-agv-aliran-material">Email kantor <span class="req">*</span></label><input id="email-artikel-agv-aliran-material" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="telepon-artikel-agv-aliran-material">Telepon / WhatsApp <span class="req">*</span></label><input id="telepon-artikel-agv-aliran-material" name="telepon" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+()\-\s]{8,20}" placeholder="08xx xxxx xxxx" required></div>
+        </div>
+        <div class="field"><label for="kategori-artikel-agv-aliran-material">Jenis kebutuhan</label><select id="kategori-artikel-agv-aliran-material" name="kategori"><option>Jig &amp; Fixture Custom</option><option>Otomasi &amp; Integrasi Robotik</option><option>Machining &amp; Fabrikasi Custom</option><option>Conveyor &amp; Modifikasi Fasilitas</option><option>Pengadaan Produk / Suku Cadang</option><option>Lainnya</option></select></div>
+        <div class="field"><label for="pesan-artikel-agv-aliran-material">Ringkasan kebutuhan <span class="req">*</span></label><textarea id="pesan-artikel-agv-aliran-material" name="pesan" rows="4" required placeholder="Proses, part, material, jumlah, atau masalah yang ingin diselesaikan."></textarea></div>
+        <div class="form-status ok" data-form-status role="status" tabindex="-1" hidden></div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <button class="btn btn-primary" type="submit"><span class="material-symbols-outlined" aria-hidden="true">send</span>Kirim permintaan</button>
+          <p class="body-sm">Tombol ini membuka aplikasi email Anda dengan pesan yang sudah terisi.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="wrap py-14 grid gap-10 md:grid-cols-2 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <img src="assets/img/logo-white.png" alt="PT Arasi Nusantara Perkasa" class="h-10 w-auto" width="900" height="187" loading="lazy">
+      <p class="mt-5 text-[15px] leading-relaxed max-w-xs">Engineering, machining, precision tools, fabrication, dan general supply untuk industri manufaktur.</p>
+    </div>
+    <div class="lg:col-span-2">
+      <h3>Navigasi</h3>
+      <ul class="grid gap-2.5 text-[15px]"><li><a href="index.html">Beranda</a></li><li><a href="solusi-industri.html">Solusi Industri</a></li><li><a href="portofolio.html">Portofolio Proyek</a></li><li><a href="produk.html">Produk Industri</a></li><li><a href="artikel.html">Artikel</a></li><li><a href="tentang-kami.html">Tentang Kami</a></li></ul>
+    </div>
+    <div class="lg:col-span-3">
+      <h3>Solusi</h3>
+      <ul class="grid gap-2.5 text-[15px]"><li><a href="solusi-industri.html#jig-fixture">Jig &amp; Fixture Custom</a></li><li><a href="solusi-industri.html#otomasi-robotik">Otomasi &amp; Integrasi Robotik</a></li><li><a href="solusi-industri.html#machining-fabrikasi">Machining &amp; Fabrikasi Custom</a></li><li><a href="solusi-industri.html#conveyor-modifikasi">Conveyor &amp; Modifikasi Fasilitas</a></li></ul>
+    </div>
+    <div class="lg:col-span-3">
+      <h3>Kontak</h3>
+      <ul class="grid gap-2.5 text-[15px] leading-relaxed">
+        <li><a href="mailto:admin@arasinusa.co.id">admin@arasinusa.co.id</a></li>
+        <li><a href="tel:+622189774919">(021) 897 74919</a></li>
+        <li><a href="https://www.arasinusa.co.id" target="_blank" rel="noopener noreferrer">www.arasinusa.co.id</a></li>
+        <li class="pt-2"><span class="text-white font-semibold">Kantor</span><br>Ruko Lafenza Villa Mutiara Cikarang 1 Blok R4 No. 36, Cikarang Selatan, Kab. Bekasi</li>
+        <li><span class="text-white font-semibold">Workshop</span><br>Kp. Nambo RT 011/RW 008, Sukasejati, Cikarang Selatan, Kab. Bekasi</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="wrap py-6 text-sm">© <span data-year>2026</span> PT Arasi Nusantara Perkasa. Seluruh hak dilindungi.</div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

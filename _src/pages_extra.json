@@ -1,0 +1,51 @@
+[
+ {
+  "id": "artikel-poka-yoke-stamping",
+  "file": "artikel-poka-yoke-stamping.html",
+  "active": "artikel",
+  "title": "Menekan defect stamping dengan desain nested poka-yoke dan clamping pneumatik | PT Arasi Nusantara Perkasa",
+  "desc": "Bagaimana bentuk nest, titik referensi, dan clamping pneumatik pada jig membuat lembaran logam selalu duduk di posisi yang sama saat punching."
+ },
+ {
+  "id": "artikel-interlock-robot",
+  "file": "artikel-interlock-robot.html",
+  "active": "artikel",
+  "title": "PLC dan safety interlock pada stasiun kerja robot Fanuc | PT Arasi Nusantara Perkasa",
+  "desc": "Menyatukan robot controller, PLC, light curtain, dan pintu pengaman agar robot berhenti otomatis setiap kali area kerjanya dimasuki."
+ },
+ {
+  "id": "artikel-perawatan-pneumatik",
+  "file": "artikel-perawatan-pneumatik.html",
+  "active": "artikel",
+  "title": "Perawatan silinder pneumatik dan solenoid valve di area berdebu logam | PT Arasi Nusantara Perkasa",
+  "desc": "Langkah sederhana untuk memperpanjang usia silinder dan valve di area machining dan grinding yang penuh debu serta geram logam."
+ },
+ {
+  "id": "artikel-verifikasi-dimensi",
+  "file": "artikel-verifikasi-dimensi.html",
+  "active": "artikel",
+  "title": "Verifikasi dimensi sebelum serah terima | PT Arasi Nusantara Perkasa",
+  "desc": "Apa saja yang diperiksa sebelum part machining dan jig dikirim ke pabrik klien, dan kenapa laporan inspeksi ikut diserahkan."
+ },
+ {
+  "id": "artikel-agv-aliran-material",
+  "file": "artikel-agv-aliran-material.html",
+  "active": "artikel",
+  "title": "AGV untuk aliran material antar-stasiun | PT Arasi Nusantara Perkasa",
+  "desc": "Kapan AGV layak dipakai, apa yang perlu disiapkan di lantai produksi, dan bagaimana troli serta titik docking dirancang."
+ },
+ {
+  "id": "artikel-parameter-vmc",
+  "file": "artikel-parameter-vmc.html",
+  "active": "artikel",
+  "title": "Kecepatan spindle dan pemilihan tooling di vertical machining center | PT Arasi Nusantara Perkasa",
+  "desc": "Hubungan antara kecepatan spindle, feed, coolant, dan kekakuan fixture terhadap ketelitian bentuk part aluminium."
+ },
+ {
+  "id": "artikel-pick-to-light",
+  "file": "artikel-pick-to-light.html",
+  "active": "artikel",
+  "title": "Pick to light untuk poka-yoke perakitan | PT Arasi Nusantara Perkasa",
+  "desc": "Cara kerja pick to light, komponen yang dibutuhkan, dan hal yang perlu diperhatikan saat memasangnya di rak komponen yang sudah ada."
+ }
+]

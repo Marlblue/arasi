@@ -1,0 +1,13 @@
+# Situs ini tidak punya dependensi npm, jadi yang dipantau cuma versi action di workflow.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+      timezone: Asia/Jakarta
+    commit-message:
+      prefix: "Actions"
+    groups:
+      actions:
+        patterns: ["*"]

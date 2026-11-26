@@ -1,0 +1,73 @@
+<article>
+  <header class="page-hero !pb-10">
+    <div class="wrap max-w-[56rem]">
+      <nav aria-label="Breadcrumb" class="body-sm"><a class="font-semibold text-[#001F4B] hover:underline underline-offset-4" href="artikel.html">Artikel</a><span aria-hidden="true" class="mx-2">/</span><span>Otomasi</span></nav>
+      <h1 class="h-display !text-[clamp(2rem,4vw,2.875rem)] mt-4">PLC dan safety interlock pada stasiun kerja robot Fanuc</h1>
+      <p class="lede">Menyatukan robot controller, PLC, light curtain, dan pintu pengaman agar robot berhenti otomatis setiap kali area kerjanya dimasuki.</p>
+      <p class="body-sm mt-6">Tim Engineering PT Arasi Nusantara Perkasa · 2 menit baca</p>
+    </div>
+  </header>
+  <div class="wrap max-w-[56rem] pt-10">
+    <figure class="media ratio-16-10 rounded-lg"><img src="assets/img/real/robot-painting-cad.jpg" alt="PLC dan safety interlock pada stasiun kerja robot Fanuc"></figure>
+    <div class="prose-arasi mt-10">
+<p>Robot industri bekerja cepat dan bertenaga besar. Selama operator tidak pernah masuk ke area geraknya, risikonya kecil. Masalah muncul saat operator perlu memasang part, membersihkan nozzle, atau mengambil hasil kerja. Safety interlock memastikan robot selalu berada dalam keadaan aman ketika itu terjadi.</p>
+
+<h2>Peran masing-masing perangkat</h2>
+<ul>
+  <li><strong>Robot controller</strong> menjalankan program gerak dan menerima sinyal berhenti dari luar.</li>
+  <li><strong>PLC</strong> mengatur urutan stasiun: kapan part siap, kapan robot boleh mulai, dan kapan operator boleh masuk.</li>
+  <li><strong>Perangkat pengaman</strong> seperti light curtain, safety mat, dan sakelar pintu mendeteksi kehadiran orang.</li>
+  <li><strong>Safety relay atau safety PLC</strong> memutus jalur berhenti darurat secara langsung, tidak bergantung pada logika program biasa.</li>
+</ul>
+
+<h2>Pisahkan sinyal kontrol dan sinyal keselamatan</h2>
+<p>Kesalahan yang sering terjadi adalah memasukkan sinyal light curtain hanya sebagai input biasa ke PLC. Jika program bermasalah, robot bisa tetap bergerak. Sinyal keselamatan sebaiknya dua kanal dan masuk ke safety relay atau input safety pada robot controller, sementara PLC hanya membaca statusnya untuk keperluan urutan dan tampilan alarm.</p>
+
+<h2>Urutan kerja yang aman</h2>
+<ol>
+  <li>Operator memasang part di jig, lalu keluar dari area dan menekan tombol dua tangan atau tombol start di luar pagar.</li>
+  <li>PLC memeriksa: jig sudah clamp, light curtain bersih, pintu tertutup. Baru setelah itu robot diberi izin mulai.</li>
+  <li>Jika light curtain terpotong saat robot bergerak, robot berhenti dengan kategori stop yang sesuai, dan tidak boleh langsung jalan lagi hanya karena area kembali bersih.</li>
+  <li>Reset dilakukan dengan sengaja oleh operator dari posisi yang bisa melihat seluruh area.</li>
+</ol>
+
+<h2>Mode perawatan</h2>
+<p>Teknisi kadang harus masuk saat robot dalam mode teach. Di mode ini kecepatan robot dibatasi, enabling switch pada teach pendant harus ditekan, dan pintu pengaman boleh terbuka. Pemilihan mode sebaiknya memakai kunci, agar tidak ada yang mengubahnya tanpa sengaja.</p>
+
+<h2>Base dan tata letak ikut menentukan</h2>
+<p>Base robot yang kaku dan terkunci ke lantai menjaga titik kerja tetap akurat. Jarak light curtain dari zona bahaya dihitung dari waktu berhenti robot, sehingga robot sudah diam sebelum tangan operator mencapai area gerak. Karena itu desain mekanik dan desain kontrol perlu dikerjakan bersamaan.</p>
+
+<p>Stasiun robot yang interlock-nya rapi bukan hanya lebih aman. Downtime karena alarm palsu juga berkurang, dan operator lebih percaya diri bekerja di sekitarnya.</p>
+    </div>
+    <aside class="mt-14 rounded-lg bg-[#F5F7FA] border border-[#E6EAF0] p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 justify-between">
+      <div>
+        <h2 class="h-card">Punya kasus serupa di lini Anda?</h2>
+        <p class="body-sm mt-1">Kirim gambar atau ceritakan masalahnya. Tim kami bantu cari solusinya.</p>
+      </div>
+      <a class="btn btn-primary shrink-0" href="#kontak" data-quote="PLC dan safety interlock pada stasiun kerja robot Fanuc" data-kategori="Lainnya">Diskusikan dengan tim</a>
+    </aside>
+  </div>
+</article>
+
+<section class="section" aria-labelledby="lain-judul">
+  <div class="wrap">
+    <div class="section-head-row">
+      <h2 id="lain-judul" class="h-section">Artikel lainnya</h2>
+      <a class="link-arrow" href="artikel.html">Semua artikel<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a class="card card-hover flex flex-col" href="artikel-poka-yoke-stamping.html">
+        <div class="media contain ratio-16-10"><img src="assets/img/projects/jig-punch-press.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col border-t border-[#E6EAF0]"><p class="meta">Jig &amp; fixture</p><h3 class="h-card mt-1 flex-1">Menekan defect stamping dengan desain nested poka-yoke dan clamping pneumatik</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+      <a class="card card-hover flex flex-col" href="artikel-perawatan-pneumatik.html">
+        <div class="media contain ratio-16-10"><img src="assets/img/barang/smc.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col border-t border-[#E6EAF0]"><p class="meta">Perawatan</p><h3 class="h-card mt-1 flex-1">Perawatan silinder pneumatik dan solenoid valve di area berdebu logam</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+      <a class="card card-hover flex flex-col" href="artikel-verifikasi-dimensi.html">
+        <div class="media contain ratio-16-10"><img src="assets/img/projects/cover-grille-bumper.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col border-t border-[#E6EAF0]"><p class="meta">Quality control</p><h3 class="h-card mt-1 flex-1">Verifikasi dimensi sebelum serah terima</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+    </div>
+  </div>
+</section>

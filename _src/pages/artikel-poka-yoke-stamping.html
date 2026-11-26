@@ -1,0 +1,74 @@
+<article>
+  <header class="page-hero !pb-10">
+    <div class="wrap max-w-[56rem]">
+      <nav aria-label="Breadcrumb" class="body-sm"><a class="font-semibold text-[#001F4B] hover:underline underline-offset-4" href="artikel.html">Artikel</a><span aria-hidden="true" class="mx-2">/</span><span>Jig &amp; fixture</span></nav>
+      <h1 class="h-display !text-[clamp(2rem,4vw,2.875rem)] mt-4">Menekan defect stamping dengan desain nested poka-yoke dan clamping pneumatik</h1>
+      <p class="lede">Bagaimana bentuk nest, titik referensi, dan clamping pneumatik pada jig membuat lembaran logam selalu duduk di posisi yang sama saat punching.</p>
+      <p class="body-sm mt-6">Tim Engineering PT Arasi Nusantara Perkasa · 2 menit baca</p>
+    </div>
+  </header>
+  <div class="wrap max-w-[56rem] pt-10">
+    <figure class="media contain border border-[#E6EAF0] ratio-16-10 rounded-lg"><img src="assets/img/projects/jig-punch-press.jpg" alt="Menekan defect stamping dengan desain nested poka-yoke dan clamping pneumatik"></figure>
+    <div class="prose-arasi mt-10">
+<p>Di lini stamping, sebagian besar defect bukan berasal dari dies, melainkan dari posisi part yang bergeser sebelum mesin turun. Lembaran yang miring satu atau dua milimeter cukup untuk membuat lubang meleset, burr berlebih, atau part harus di-rework. Jig yang dirancang dengan benar menghilangkan variabel itu dari tangan operator.</p>
+
+<h2>Mulai dari titik referensi part</h2>
+<p>Desain jig selalu berangkat dari gambar part dan datum yang dipakai saat inspeksi. Titik referensi pada jig harus sama dengan datum pada gambar, sehingga ketika part lolos di jig, ia juga lolos di alat ukur. Prinsip 3-2-1 dipakai untuk mengunci enam derajat kebebasan:</p>
+<ul>
+  <li><strong>Tiga titik</strong> pada bidang utama menentukan dudukan dasar.</li>
+  <li><strong>Dua titik</strong> pada sisi panjang mengunci arah dan rotasi.</li>
+  <li><strong>Satu titik</strong> pada sisi pendek mengunci posisi memanjang.</li>
+</ul>
+<p>Pin locator dibuat pas dengan lubang referensi part. Satu pin bulat dan satu pin diamond biasanya cukup untuk menghindari part terkunci atau macet karena toleransi lubang.</p>
+
+<h2>Nest yang hanya menerima orientasi benar</h2>
+<p>Poka-yoke pada jig berarti part secara fisik tidak bisa dipasang terbalik atau tertukar. Caranya bisa sederhana: profil nest mengikuti kontur part yang asimetris, ditambah pin penolak di posisi yang hanya cocok untuk orientasi yang benar. Operator tidak perlu mengingat urutan; kalau part masuk, berarti posisinya sudah benar.</p>
+
+<h2>Clamping yang menahan, bukan menekan berlebih</h2>
+<p>Toggle clamp manual sudah cukup untuk banyak kasus, tetapi pada siklus cepat clamping pneumatik memberi gaya yang konsisten di setiap pukulan. Dua silinder yang bergerak bersamaan menahan part dari dua sisi tanpa membuatnya melengkung. Yang perlu diperhatikan:</p>
+<ul>
+  <li>Ujung clamp berbahan lunak (urethane atau POM) agar permukaan part tidak tergores.</li>
+  <li>Sensor posisi silinder dihubungkan ke interlock mesin, sehingga press tidak bisa turun sebelum clamp benar-benar menutup.</li>
+  <li>Regulator tekanan terpisah untuk clamping, supaya gaya jepit tidak ikut berubah ketika tekanan pabrik turun.</li>
+</ul>
+
+<h2>Material dan perlakuan panas</h2>
+<p>Bagian yang bersentuhan langsung dengan lembaran, seperti locator dan pelat nest, dibuat dari baja perkakas seperti SKD11 yang dikeraskan agar tidak cepat aus. Base plate cukup dari S50C atau baja karbon sedang. Komponen yang sering diganti dibuat modular dan dipasang dengan dowel pin, sehingga penggantian tidak mengubah posisi.</p>
+
+<h2>Uji sebelum dipakai di lini</h2>
+<p>Jig diverifikasi dimensinya di workshop, lalu dicoba langsung di mesin dengan part produksi. Beberapa puluh siklus percobaan biasanya cukup untuk melihat apakah ada pergeseran, keausan awal, atau langkah operator yang masih membingungkan. Penyesuaian kecil di tahap ini jauh lebih murah daripada setelah jig dipakai penuh.</p>
+
+<p>Hasil akhirnya bukan hanya defect yang turun. Operator baru lebih cepat terlatih, waktu setting berkurang, dan data kualitas menjadi lebih stabil karena satu sumber variasi sudah hilang.</p>
+    </div>
+    <aside class="mt-14 rounded-lg bg-[#F5F7FA] border border-[#E6EAF0] p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 justify-between">
+      <div>
+        <h2 class="h-card">Punya kasus serupa di lini Anda?</h2>
+        <p class="body-sm mt-1">Kirim gambar atau ceritakan masalahnya. Tim kami bantu cari solusinya.</p>
+      </div>
+      <a class="btn btn-primary shrink-0" href="#kontak" data-quote="Menekan defect stamping dengan desain nested poka-yoke dan clamping pneumatik" data-kategori="Lainnya">Diskusikan dengan tim</a>
+    </aside>
+  </div>
+</article>
+
+<section class="section" aria-labelledby="lain-judul">
+  <div class="wrap">
+    <div class="section-head-row">
+      <h2 id="lain-judul" class="h-section">Artikel lainnya</h2>
+      <a class="link-arrow" href="artikel.html">Semua artikel<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <a class="card card-hover flex flex-col" href="artikel-interlock-robot.html">
+        <div class="media ratio-16-10"><img src="assets/img/real/robot-painting-cad.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col"><p class="meta">Otomasi</p><h3 class="h-card mt-1 flex-1">PLC dan safety interlock pada stasiun kerja robot Fanuc</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+      <a class="card card-hover flex flex-col" href="artikel-perawatan-pneumatik.html">
+        <div class="media contain ratio-16-10"><img src="assets/img/barang/smc.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col border-t border-[#E6EAF0]"><p class="meta">Perawatan</p><h3 class="h-card mt-1 flex-1">Perawatan silinder pneumatik dan solenoid valve di area berdebu logam</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+      <a class="card card-hover flex flex-col" href="artikel-verifikasi-dimensi.html">
+        <div class="media contain ratio-16-10"><img src="assets/img/projects/cover-grille-bumper.jpg" alt="" loading="lazy"></div>
+        <div class="card-pad flex-1 flex flex-col border-t border-[#E6EAF0]"><p class="meta">Quality control</p><h3 class="h-card mt-1 flex-1">Verifikasi dimensi sebelum serah terima</h3><span class="link-arrow mt-4">Baca selengkapnya<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></span></div>
+      </a>
+    </div>
+  </div>
+</section>

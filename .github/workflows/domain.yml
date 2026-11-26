@@ -1,0 +1,28 @@
+# Pengingat masa berlaku domain. Domain dipegang atasan dan pernah habis sampai situsnya
+# jadi halaman parkir, jadi mulai 60 hari sebelum habis grup dikabari setiap Senin dengan
+# pesan yang siap diteruskan. Logikanya ada di Marlblue/website-ops/actions/cek-domain.
+name: Cek masa berlaku domain
+
+on:
+  schedule:
+    - cron: "0 1 * * 1" # Senin 08.00 WIB
+  workflow_dispatch:
+    inputs:
+      uji:
+        description: Cetak pesan pengingat tanpa mengirimnya ke grup
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: Marlblue/website-ops/actions/cek-domain@8f016c53f902557e42072b93b2a7dfe99fcc4703 # main
+        with:
+          domain: arasinusa.co.id
+          uji: ${{ inputs.uji }}
+          webhook: ${{ secrets.OPS_ALERT_WEBHOOK_URL }}

@@ -1,0 +1,32 @@
+# Memastikan website/ yang di-commit sama dengan hasil build dari _src/. Tanpa ini,
+# suntingan yang dibuat langsung di website/*.html lolos ke main lalu hilang diam-diam
+# pada build berikutnya.
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Build ulang
+        run: |
+          python3 _src/gen_produk.py
+          python3 _src/gen_portofolio.py
+          python3 _src/gen_artikel.py
+          python3 _src/build.py website
+
+      - name: Hasil build sama dengan yang di-commit
+        run: |
+          if ! git diff --quiet; then
+            git --no-pager diff --stat
+            echo "::error::website/ atau _src/pages/ tidak sama dengan hasil build. Jalankan build lalu commit hasilnya."
+            exit 1
+          fi

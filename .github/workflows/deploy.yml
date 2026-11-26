@@ -1,0 +1,139 @@
+name: Deploy ke Hostinger
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Dua push berdekatan tidak boleh menyalin ke public_html bersamaan.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      # Sampai secrets SSH diisi (lihat README), deploy dilewati dengan catatan, bukan
+      # merah: situsnya masih di-upload manual lewat File Manager hPanel.
+      - name: Cek secrets SSH
+        id: cek
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+        run: |
+          if [ -z "$SSH_HOST" ]; then
+            echo "::notice::Secret SSH_HOST belum diisi, deploy LEWAT."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.cek.outputs.ok == 'true'
+
+      - name: Build
+        if: steps.cek.outputs.ok == 'true'
+        run: |
+          python3 _src/gen_produk.py
+          python3 _src/gen_portofolio.py
+          python3 _src/gen_artikel.py
+          python3 _src/build.py website
+
+      # versi.txt memuat SHA commit, jadi langkah verifikasi bisa membuktikan yang
+      # dilayani server memang deploy ini, bukan sisa versi lama di cache.
+      - name: Kemas
+        if: steps.cek.outputs.ok == 'true'
+        run: |
+          echo "${{ github.sha }}" > website/versi.txt
+          tar -czf deploy.tar.gz -C website .
+
+      # Action dipin ke SHA commit, bukan tag, karena menerima kunci SSH server.
+      # SHA-nya sama dengan yang dipakai kalih-signature dan nawwaf_friends.
+      - name: Upload ke server
+        if: steps.cek.outputs.ok == 'true'
+        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345 # v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          source: deploy.tar.gz
+          target: "~/"
+
+      - name: Bongkar ke public_html
+        if: steps.cek.outputs.ok == 'true'
+        uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1.2.5
+        env:
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          envs: DEPLOY_PATH
+          script: |
+            set -e
+            TARGET="$HOME/${DEPLOY_PATH:-domains/arasinusa.co.id/public_html}"
+            test -d "$TARGET"
+
+            # Dibongkar ke direktori sementara dulu dan diperiksa isinya, supaya tar
+            # yang rusak tidak meninggalkan public_html setengah terisi.
+            rm -rf ~/arasi.incoming
+            mkdir -p ~/arasi.incoming
+            tar -xzf ~/deploy.tar.gz -C ~/arasi.incoming
+            rm ~/deploy.tar.gz
+            test -f ~/arasi.incoming/index.html
+            test -f ~/arasi.incoming/.htaccess
+
+            # Disalin menimpa, tidak menghapus berkas lama: gambar yang sudah dihapus dari
+            # repo tetap tertinggal di server, tapi link lama dari luar tidak jadi 404.
+            # Halaman sambutan bawaan hosting dibuang karena bisa dibuka publik.
+            rm -f "$TARGET/default.php" "$TARGET/default.html"
+            cp -a ~/arasi.incoming/. "$TARGET/"
+            rm -rf ~/arasi.incoming
+
+      - name: Pastikan situs melayani versi ini
+        if: steps.cek.outputs.ok == 'true'
+        env:
+          SHA: ${{ github.sha }}
+        run: |
+          for attempt in $(seq 1 12); do
+            got=$(curl -sS --max-time 15 "https://arasinusa.co.id/versi.txt?cb=$SHA" || true)
+            if [ "$got" = "$SHA" ]; then echo "OK: versi $SHA dilayani."; exit 0; fi
+            echo "percobaan $attempt: belum, ulangi 10 detik lagi"
+            sleep 10
+          done
+          echo "::error::arasinusa.co.id/versi.txt tidak membalas SHA deploy ini dalam 2 menit."
+          exit 1
+
+      - name: Susun kabar deploy
+        id: kabar
+        if: always() && steps.cek.outputs.ok == 'true'
+        env:
+          JOB_STATUS: ${{ job.status }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_SHA: ${{ github.sha }}
+          ACTOR: ${{ github.actor }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          SUBJECT=$(printf '%s' "$COMMIT_MESSAGE" | head -n 1)
+          [ -n "$SUBJECT" ] || SUBJECT="(dijalankan manual oleh $ACTOR)"
+          SHORT_SHA=$(printf '%s' "$COMMIT_SHA" | cut -c1-7)
+          case "$JOB_STATUS" in
+            success) TEXT="Deploy BERHASIL: $SUBJECT ($SHORT_SHA)." ;;
+            cancelled) TEXT="Deploy DIBATALKAN: $SUBJECT ($SHORT_SHA). $RUN_URL" ;;
+            *) TEXT="Deploy GAGAL: $SUBJECT ($SHORT_SHA). $RUN_URL" ;;
+          esac
+          echo "teks=$TEXT" >> "$GITHUB_OUTPUT"
+
+      - name: Kabari grup tim
+        if: always() && steps.cek.outputs.ok == 'true'
+        continue-on-error: true
+        uses: Marlblue/website-ops/actions/kabari@8f016c53f902557e42072b93b2a7dfe99fcc4703 # main
+        with:
+          pesan: ${{ steps.kabar.outputs.teks }}
+          label: arasinusa.co.id
+          webhook: ${{ secrets.OPS_ALERT_WEBHOOK_URL }}
+          wajib: true
